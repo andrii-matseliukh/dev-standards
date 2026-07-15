@@ -2,18 +2,6 @@
 # Top-most EditorConfig file
 root = true
 
-# =============================================================================
-#  Division of labor
-#  - CSharpier (.csharpierrc.yaml) owns LAYOUT: indentation, line breaks,
-#    wrapping, spacing, blank lines. Don't duplicate those rules here.
-#  - This .editorconfig owns CODE STYLE that CSharpier ignores: var usage,
-#    qualification, naming, using sorting, expression bodies, etc.
-#    Rider + Roslyn (dotnet format) read these.
-#
-#  CSharpier only reads a few whitespace keys below (indent_size, end_of_line,
-#  insert_final_newline). Keep those in sync with .csharpierrc.yaml.
-# =============================================================================
-
 [*]
 indent_style = space
 indent_size = 4
@@ -26,12 +14,8 @@ max_line_length = 110
 [*.{json,yml,yaml,xml,csproj,props,targets}]
 indent_size = 2
 
-# =============================================================================
-#  (Rider-parity)
-# =============================================================================
 [*.cs]
-
-#### 'this.' and Me qualification — Rider default: do NOT qualify ####
+#### 'this.' ####
 # dotnet_style_qualification_for_field = false:warning
 # dotnet_style_qualification_for_property = false:warning
 # dotnet_style_qualification_for_method = false:warning
