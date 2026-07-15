@@ -1,0 +1,81 @@
+{
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "$comment": "play sound, when Claude waiting for user approvals",
+            "type": "command",
+            "command": "powershell -Command \"(New-Object System.Media.SoundPlayer (Join-Path $env:CLAUDE_PROJECT_DIR '.claude/hooks/notification-sound.wav')).PlaySync()\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "$comment": "show warning when the [X]% (85) threshold of usage in [Y] Model (Opus) is reached",
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/context-threshold.js\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "$comment": "log every claude exeution command",
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR}/.claude/hooks/log-commands.ps1\""
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git worktree:*)",
+      "PowerShell(git worktree:*)"
+    ],
+    "deny": [
+      "Bash(git:*)",
+      "PowerShell(git:*)",
+
+      "Bash(choco install:*)",
+      "Bash(dotnet add:*)",
+      "Bash(dotnet tool install:*)",
+      "Bash(npm install:*)",
+      "Bash(pip install:*)",
+      "Bash(pnpm install:*)",
+      "Bash(winget install:*)",
+      "Bash(yarn install:*)",
+      "PowerShell(choco install:*)",
+      "PowerShell(dotnet add:*)",
+      "PowerShell(dotnet tool install:*)",
+      "PowerShell(npm install:*)",
+      "PowerShell(pip install:*)",
+      "PowerShell(pnpm install:*)",
+      "PowerShell(winget install:*)",
+      "PowerShell(yarn install:*)",
+
+      "Bash(dotnet user-secrets:*)",
+      "PowerShell(dotnet user-secrets:*)",
+
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/*.tfstate*)",
+      "Read(**/*.tfvars)",
+      "Read(**/.aws/**)",
+      "Read(**/.env*)",
+      "Read(**/.ssh/**)",
+      "Read(**/appsettings.*.json)",
+      "Read(**/secrets*.json)",
+      "Read(**/UserSecrets/**)"
+    ]
+  }
+}

@@ -1,0 +1,203 @@
+# EditorConfig is awesome: https://EditorConfig.org
+# Top-most EditorConfig file
+root = true
+
+# =============================================================================
+#  Division of labor
+#  - CSharpier (.csharpierrc.yaml) owns LAYOUT: indentation, line breaks,
+#    wrapping, spacing, blank lines. Don't duplicate those rules here.
+#  - This .editorconfig owns CODE STYLE that CSharpier ignores: var usage,
+#    qualification, naming, using sorting, expression bodies, etc.
+#    Rider + Roslyn (dotnet format) read these.
+#
+#  CSharpier only reads a few whitespace keys below (indent_size, end_of_line,
+#  insert_final_newline). Keep those in sync with .csharpierrc.yaml.
+# =============================================================================
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = unset
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 110
+
+[*.{json,yml,yaml,xml,csproj,props,targets}]
+indent_size = 2
+
+# =============================================================================
+#  (Rider-parity)
+# =============================================================================
+[*.cs]
+
+#### 'this.' and Me qualification — Rider default: do NOT qualify ####
+# dotnet_style_qualification_for_field = false:warning
+# dotnet_style_qualification_for_property = false:warning
+# dotnet_style_qualification_for_method = false:warning
+# dotnet_style_qualification_for_event = false:warning
+
+#### Language keywords vs framework type names (int vs Int32) ####
+# dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+# dotnet_style_predefined_type_for_member_access = true:warning
+
+#### Parentheses preferences (Rider: clarify with parens) ####
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:suggestion
+
+#### Modifier preferences ####
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
+dotnet_style_readonly_field = true:suggestion
+
+#### Expression-level preferences ####
+dotnet_style_object_initializer = true:suggestion
+dotnet_style_collection_initializer = true:suggestion
+dotnet_style_explicit_tuple_names = true:suggestion
+dotnet_style_prefer_inferred_tuple_names = true:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
+dotnet_style_prefer_auto_properties = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+dotnet_style_prefer_compound_assignment = true:suggestion
+dotnet_style_prefer_simplified_boolean_expressions = true:suggestion
+dotnet_style_prefer_simplified_interpolation = true:suggestion
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_null_propagation = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+
+#### using directives — Rider default: System first, sorted, no extra blank lines ####
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+csharp_using_directive_placement = outside_namespace:warning
+
+# -----------------------------------------------------------------------------
+#  C#-specific style
+# -----------------------------------------------------------------------------
+
+#### 'var' preferences — Rider default: use var when the type is apparent ####
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+#### Expression-bodied members — Rider default: only for simple one-liners ####
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_constructors = when_on_single_line:suggestion
+csharp_style_expression_bodied_operators = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_expression_bodied_indexers = true:suggestion
+csharp_style_expression_bodied_accessors = true:suggestion
+csharp_style_expression_bodied_lambdas = true:suggestion
+csharp_style_expression_bodied_local_functions = when_on_single_line:suggestion
+
+#### Pattern matching ####
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+csharp_style_prefer_switch_expression = true:suggestion
+csharp_style_prefer_pattern_matching = true:suggestion
+csharp_style_prefer_not_pattern = true:suggestion
+csharp_style_prefer_extended_property_pattern = true:suggestion
+
+#### Null-checking & modern syntax ####
+csharp_style_throw_expression = true:suggestion
+csharp_style_conditional_delegate_call = true:suggestion
+csharp_prefer_simple_default_expression = true:suggestion
+csharp_style_prefer_index_operator = true:suggestion
+csharp_style_prefer_range_operator = true:suggestion
+csharp_style_deconstructed_variable_declaration = true:suggestion
+csharp_style_inlined_variable_declaration = true:suggestion
+csharp_style_unused_value_assignment_preference = discard_variable:suggestion
+csharp_style_unused_value_expression_statement_preference = discard_variable:silent
+
+#### Modifier order — Rider default ####
+csharp_preferred_modifier_order = public,private,protected,internal,file,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,required,volatile,async:warning
+
+#### Code-block & namespace preferences ####
+csharp_prefer_braces = true:warning
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_style_namespace_declarations = file_scoped:warning
+csharp_style_prefer_method_group_conversion = true:silent
+csharp_style_prefer_top_level_statements = true:silent
+csharp_style_prefer_primary_constructors = true:suggestion
+
+# =============================================================================
+#  Naming conventions (Rider-parity)
+# =============================================================================
+
+## Symbol groups
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+dotnet_naming_symbols.interfaces.applicable_accessibilities = *
+
+dotnet_naming_symbols.types.applicable_kinds = class,struct,enum,delegate
+dotnet_naming_symbols.types.applicable_accessibilities = *
+
+dotnet_naming_symbols.type_parameters.applicable_kinds = type_parameter
+dotnet_naming_symbols.type_parameters.applicable_accessibilities = *
+
+dotnet_naming_symbols.public_members.applicable_kinds = property,method,field,event
+dotnet_naming_symbols.public_members.applicable_accessibilities = public,internal,protected,protected_internal,private_protected
+
+dotnet_naming_symbols.const_fields.applicable_kinds = field
+dotnet_naming_symbols.const_fields.applicable_accessibilities = *
+dotnet_naming_symbols.const_fields.required_modifiers = const
+
+dotnet_naming_symbols.private_static_fields.applicable_kinds = field
+dotnet_naming_symbols.private_static_fields.applicable_accessibilities = private
+dotnet_naming_symbols.private_static_fields.required_modifiers = static
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_symbols.locals_and_parameters.applicable_kinds = parameter,local
+dotnet_naming_symbols.locals_and_parameters.applicable_accessibilities = *
+
+dotnet_naming_symbols.local_constants.applicable_kinds = local
+dotnet_naming_symbols.local_constants.required_modifiers = const
+
+## Naming styles
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+dotnet_naming_style.i_prefixed.capitalization = pascal_case
+dotnet_naming_style.i_prefixed.required_prefix = I
+
+dotnet_naming_style.t_prefixed.capitalization = pascal_case
+dotnet_naming_style.t_prefixed.required_prefix = T
+
+dotnet_naming_style.camel_case.capitalization = camel_case
+
+dotnet_naming_style.underscore_camel_case.capitalization = camel_case
+dotnet_naming_style.underscore_camel_case.required_prefix = _
+
+## Rules
+dotnet_naming_rule.interfaces_i_prefixed.severity = warning
+dotnet_naming_rule.interfaces_i_prefixed.symbols = interfaces
+dotnet_naming_rule.interfaces_i_prefixed.style = i_prefixed
+
+dotnet_naming_rule.type_parameters_t_prefixed.severity = warning
+dotnet_naming_rule.type_parameters_t_prefixed.symbols = type_parameters
+dotnet_naming_rule.type_parameters_t_prefixed.style = t_prefixed
+
+dotnet_naming_rule.types_pascal.severity = warning
+dotnet_naming_rule.types_pascal.symbols = types
+dotnet_naming_rule.types_pascal.style = pascal_case
+
+dotnet_naming_rule.public_members_pascal.severity = warning
+dotnet_naming_rule.public_members_pascal.symbols = public_members
+dotnet_naming_rule.public_members_pascal.style = pascal_case
+
+dotnet_naming_rule.const_fields_pascal.severity = warning
+dotnet_naming_rule.const_fields_pascal.symbols = const_fields
+dotnet_naming_rule.const_fields_pascal.style = pascal_case
+
+dotnet_naming_rule.private_static_fields_underscore.severity = suggestion
+dotnet_naming_rule.private_static_fields_underscore.symbols = private_static_fields
+dotnet_naming_rule.private_static_fields_underscore.style = underscore_camel_case
+
+dotnet_naming_rule.private_fields_underscore.severity = suggestion
+dotnet_naming_rule.private_fields_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_underscore.style = underscore_camel_case
+
+dotnet_naming_rule.locals_camel.severity = suggestion
+dotnet_naming_rule.locals_camel.symbols = locals_and_parameters
+dotnet_naming_rule.locals_camel.style = camel_case

@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Launch dotnet one file program ```dotnet run app.cs --configuration Release```
+      "name": ".NET: Launch Active File",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "args": [
+        "run",
+        "${file}",
+        "--configuration",
+        "Release"
+      ],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      // Launch dotnet one file program ```dotnet run --project AspDemo.csproj --launch-profile dev```
+      "name": "asp.net dev (active project)",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${fileDirname}",
+        "--launch-profile",
+        "dev"
+      ],
+      "cwd": "${fileDirname}",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}

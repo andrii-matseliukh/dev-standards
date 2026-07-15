@@ -1,0 +1,74 @@
+{
+  // ─── editor basics ───
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  // ─── editor font ───
+  "editor.lineHeight": 1.5,
+  "editor.fontSize": 13,
+  "editor.fontFamily": "Roboto Mono",
+  // ─── theme ───
+  "vscode-pets.theme": "autumn",
+  "workbench.colorCustomizations": {
+    "editor.background": "#222231FF",
+    "editorError.foreground": "#d15353",
+    "editorError.background": "#ff000022",
+  },
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "editor.tokenColorCustomizations": {
+    "[Catppuccin Mocha]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "emphasis",
+            "comment",
+            "comment.block",
+            "comment.line",
+            "keyword",
+            "keyword.control",
+            "keyword.operator",
+            "storage",
+            "storage.type",
+            "storage.modifier",
+            "entity.name.type",
+            "entity.name.tag",
+            "entity.name.method",
+            "entity.name.function",
+            "entity.other.attribute-name",
+            "variable",
+            "variable.parameter",
+            "variable.parameter",
+            "variable.language",
+            "support.type",
+            "support.class",
+            "markup.italic"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "variable.name",
+          ],
+          "settings": {
+            //"foreground": "#9cd1d5"
+          }
+        }
+      ]
+    }
+  },
+  // ─── inlayHints ───
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.fontSize": 10,
+  "editor.inlayHints.fontFamily": "Segoe UI Variable",
+  "editor.inlayHints.padding": false,
+  "dotnet.inlayHints.enableInlayHintsForParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true
+}
