@@ -9,7 +9,8 @@
   // ─── editor font ───
   "editor.lineHeight": 1.5,
   "editor.fontSize": 13,
-  "editor.fontFamily": "Roboto Mono",
+  "editor.fontFamily": "RobotoMono Nerd Font Mono",
+  "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Mono', monospace",
   // ─── theme ───
   "vscode-pets.theme": "autumn",
   "workbench.colorCustomizations": {
