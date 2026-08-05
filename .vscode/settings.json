@@ -1,4 +1,9 @@
 {
+  // prohjects specific
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+
   "window.zoomLevel": -0.65,
   // ─── editor basics ───
   "editor.formatOnSave": false,
