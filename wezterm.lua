@@ -34,13 +34,15 @@ config.cursor_thickness = '0.095cell'
 
 --config.enable_tab_bar = false
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.84
 
 local action = wezterm.action
 config.keys = {
   { key = 'd', mods = 'CTRL', action = action.SplitVertical { domain = 'CurrentPaneDomain' } },
   { key = 'd', mods = 'CTRL|SHIFT', action = action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
   { key = 'w', mods = 'CTRL|SHIFT', action = action.CloseCurrentPane { confirm = false } },
+  { key = 'UpArrow', mods = 'CTRL', action = wezterm.action.ScrollByLine(-1), },
+  { key = 'DownArrow', mods = 'CTRL', action = wezterm.action.ScrollByLine(1), },
 }
 -- config.keys = {
 --   { key = 'd', mods = 'CMD|SHIFT', action = action.SplitVertical { domain = 'CurrentPaneDomain' } },
