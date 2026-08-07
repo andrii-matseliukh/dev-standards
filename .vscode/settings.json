@@ -1,4 +1,6 @@
 {
+  "editor.minimap.maxColumn": 80,
+
   // prohjects specific
   "tailwindCSS.experimental.classRegex": [
     ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
