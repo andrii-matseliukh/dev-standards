@@ -57,6 +57,9 @@ config.keys = {
 
 -- (here will be added actual configuration)
 
+-- # disable ring/beep (notification sound)
+config.audible_bell = "Disabled"
+
 return config
 
 
