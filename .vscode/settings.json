@@ -1,12 +1,14 @@
 {
   "editor.minimap.maxColumn": 80,
+  "window.zoomLevel": -0.65,
+
+  "terminal.integrated.fontSize": 13,
 
   // prohjects specific
   "tailwindCSS.experimental.classRegex": [
     ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
 
-  "window.zoomLevel": -0.65,
   // ─── editor basics ───
   "editor.formatOnSave": false,
   "editor.formatOnPaste": false,
