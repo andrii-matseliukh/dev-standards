@@ -33,6 +33,15 @@
       "cwd": "${fileDirname}",
       "console": "integratedTerminal",
       "stopAtEntry": false
+    },
+    {
+      // React app (basket-items-fill): starts `bun run dev`,
+      // then opens a browser attached to the debugger.
+      "name": "Debug React app (basket-items-fill)",
+      "type": "firefox",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/modules/basket-items-fill/react",
     }
   ]
 }
