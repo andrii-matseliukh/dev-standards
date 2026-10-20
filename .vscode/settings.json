@@ -1,6 +1,9 @@
 {
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 4,
+  "workbench.editor.pinnedTabSizing": "normal",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.showTabs": "multiple",
 
   "editor.minimap.maxColumn": 80,
   "window.zoomLevel": -0.65,
