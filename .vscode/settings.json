@@ -1,4 +1,6 @@
 {
+  "chat.disableAIFeatures": true,
+
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 4,
   "workbench.editor.pinnedTabSizing": "normal",
