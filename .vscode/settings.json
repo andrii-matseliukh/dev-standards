@@ -1,42 +1,59 @@
 {
+  // my custom user settings
   "chat.disableAIFeatures": true,
 
+  "workbench.tree.indent": 18,
   "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.value": 4,
-  "workbench.editor.pinnedTabSizing": "normal",
+  "workbench.editor.limit.value": 15,
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.tabSizing": "fixed",
+  "workbench.editor.tabSizingFixedMaxWidth": 200,
   "workbench.editor.pinnedTabsOnSeparateRow": true,
-  "workbench.editor.showTabs": "multiple",
-
-  "editor.minimap.maxColumn": 80,
-  "window.zoomLevel": -0.65,
-
-  "terminal.integrated.fontSize": 13,
-
-  // prohjects specific
-  "tailwindCSS.experimental.classRegex": [
-    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
-  ],
-
-  // ─── editor basics ───
-  "editor.formatOnSave": false,
-  "editor.formatOnPaste": false,
-  "editor.formatOnType": false,
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  // ─── editor font ───
-  "editor.lineHeight": 1.5,
-  "editor.fontSize": 13,
-  "editor.fontFamily": "RobotoMono Nerd Font Mono",
-  "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Mono', monospace",
-  // ─── theme ───
-  "vscode-pets.theme": "autumn",
+  "workbench.editor.showTabIndex": true,
   "workbench.colorCustomizations": {
     "editor.background": "#222231FF",
     "editorError.foreground": "#d15353",
     "editorError.background": "#ff000022",
   },
   "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "vscode-icons",
+
+  "window.zoomLevel": -0.65,
+  "window.density.layout": "compact",
+
+  "terminal.integrated.fontSize": 13,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.005)",
+    "rgba(127,255,127,0.005)",
+    "rgba(255,127,255,0.005)",
+    "rgba(79,236,236,0.005)"
+  ],
+
+  // tailwind
+  "tailwindCSS.experimental.classRegex": [
+    ["tv\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "tailwindCSS.classFunctions": [
+    "tv",
+    "cn",
+    "cx",
+    "clsx",
+    "cvo"
+  ],
+
+  // ─── editor basics ───
+  "editor.renderWhitespace": "trailing",
+  "editor.mouseWheelZoom": true,
+  "editor.smoothScrolling": true,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.maxColumn": 80,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.lineHeight": 1.5,
+  "editor.fontSize": 13,
+  "editor.fontFamily": "RobotoMono Nerd Font Mono",
+  "terminal.integrated.fontFamily": "'RobotoMono Nerd Font Mono', monospace",
   "editor.tokenColorCustomizations": {
     "[Catppuccin Mocha]": {
       "textMateRules": [
@@ -80,7 +97,7 @@
       ]
     }
   },
-  // ─── inlayHints ───
+  // ─── dotnet inlayHints ───
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlayHints.fontSize": 10,
   "editor.inlayHints.fontFamily": "Segoe UI Variable",
@@ -89,5 +106,9 @@
   "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
   "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
   "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
-  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true
+  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
