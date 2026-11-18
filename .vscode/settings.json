@@ -1,5 +1,6 @@
 {
   // my custom user settings
+  "chat.agent.enabled": false,
   "chat.disableAIFeatures": true,
 
   "workbench.tree.indent": 18,
